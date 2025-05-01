@@ -34,6 +34,11 @@ export function useInitTelegram() {
       if (viewport.mount.isAvailable() && !viewport.isMounting()) {
         await viewport.mount();
       }
+
+      // ✅ 请求全屏
+      if (viewport.requestFullscreen.isAvailable()) {
+        viewport.requestFullscreen();
+      }
     };
 
     initTelegram();
