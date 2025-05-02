@@ -1,3 +1,4 @@
+"use client";
 // app/hooks/useInitTelegram.ts
 import { useEffect } from "react";
 import {
