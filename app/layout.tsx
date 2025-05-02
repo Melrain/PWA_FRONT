@@ -1,8 +1,5 @@
-"use client";
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useInitTelegram } from "../hooks/useInitTelegram";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +16,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useInitTelegram();
   return (
     <html lang="en">
       <head>
