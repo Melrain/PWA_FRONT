@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.safe-area-wrapper {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  /* Optional fallback for devices that don't support safe-area-inset */
+  padding-top: constant(safe-area-inset-top, 0px);
+  padding-bottom: constant(safe-area-inset-bottom, 0px);
+  padding-left: constant(safe-area-inset-left, 0px);
+  padding-right: constant(safe-area-inset-right, 0px);
+}
+
+.safe-area-header {
+  padding-top: env(safe-area-inset-top);
+  padding-top: constant(safe-area-inset-top, 0px);
+}
+
+.safe-area-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constant(safe-area-inset-bottom, 0px);
+}
+
+/* Optionally, add media query fallback if env() is not supported */
+@supports not (padding-top: env(safe-area-inset-top)) {
+  .safe-area-wrapper {
+    padding: 0.5rem; /* fallback padding */
+  }
+}

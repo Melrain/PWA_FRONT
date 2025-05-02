@@ -1,7 +1,5 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-const Header = () => {
-  return <div>Header</div>;
-};
-
-export default Header;
+export function SafeHeader({ children }: PropsWithChildren) {
+  return <header className="safe-area-header">{children}</header>;
+}

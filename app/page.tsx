@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import SafeAreaWrapper from "./components/SafeAreaWrapper";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <SafeAreaWrapper>page</SafeAreaWrapper>;
+};
 
-export default page
+export default page;

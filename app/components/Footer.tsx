@@ -1,7 +1,5 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 
-const Footer = () => {
-  return <div>Footer</div>;
-};
-
-export default Footer;
+export function SafeFooter({ children }: PropsWithChildren) {
+  return <footer className="safe-area-footer">{children}</footer>;
+}
