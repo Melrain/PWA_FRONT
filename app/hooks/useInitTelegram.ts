@@ -11,8 +11,11 @@ import {
   viewport,
   retrieveLaunchParams,
 } from "@telegram-apps/sdk-react";
+import { useAppEnv } from "../store/useAppEnv";
 
 export function useInitTelegram() {
+  const { setIsTelegram } = useAppEnv();
+
   useEffect(() => {
     let params;
     try {
@@ -24,8 +27,11 @@ export function useInitTelegram() {
 
     if (!params) {
       console.warn("[Telegram] 未检测到有效启动参数，跳过初始化");
+      setIsTelegram(false);
       return;
     }
+
+    setIsTelegram(true);
 
     const runInit = async () => {
       // ✅ 初始化 SDK
