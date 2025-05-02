@@ -22,7 +22,7 @@ export function useInitTelegram() {
       return;
     }
 
-    if (!params?.initDataRaw) {
+    if (!params) {
       console.warn("[Telegram] 未检测到有效启动参数，跳过初始化");
       return;
     }
