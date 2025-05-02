@@ -1,8 +1,12 @@
 import React from "react";
-import SafeAreaWrapper from "./components/SafeAreaWrapper";
+import { SafeHeader } from "./components/SafeHeader";
 
 const page = () => {
-  return <SafeAreaWrapper>page</SafeAreaWrapper>;
+  return (
+    <SafeHeader>
+      <div className="text-xl font-bold">游戏标题</div>
+    </SafeHeader>
+  );
 };
 
 export default page;
