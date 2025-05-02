@@ -1,11 +1,14 @@
 import React from "react";
-import { SafeHeader } from "./components/SafeHeader";
+import { LayoutShell } from "./components/LayoutShell";
 
 const page = () => {
   return (
-    <SafeHeader>
-      <div className="text-xl font-bold">游戏标题</div>
-    </SafeHeader>
+    <LayoutShell>
+      <div className="p-4">
+        {/* 页面主体内容 */}
+        <p>这里是游戏主体内容</p>
+      </div>
+    </LayoutShell>
   );
 };
 
