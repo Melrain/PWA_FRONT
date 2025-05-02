@@ -33,6 +33,8 @@ export function useInitTelegram() {
       return;
     }
 
+    setIsTelegram(true);
+
     const telegramUser = params?.tgWebAppData;
 
     if (telegramUser) {
