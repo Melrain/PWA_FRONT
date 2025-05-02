@@ -17,7 +17,7 @@ import { useTelegramUserStore } from "../store/useTelegramUserStore";
 
 export function useInitTelegram() {
   const { setIsTelegram } = useAppEnv();
-
+  const { setUser } = useTelegramUserStore();
   useEffect(() => {
     let params;
     try {
@@ -38,7 +38,7 @@ export function useInitTelegram() {
     const telegramUser = params?.tgWebAppData;
 
     if (telegramUser) {
-      useTelegramUserStore.getState().setUser({
+      setUser({
         id: telegramUser.id as number,
         firstName: telegramUser.first_name as string,
         lastName: telegramUser.last_name as string,
