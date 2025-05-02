@@ -2,7 +2,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useInitTelegram } from "./hooks/useInitTelegram";
+import { useInitTelegram } from "../hooks/useInitTelegram";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

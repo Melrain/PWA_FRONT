@@ -1,5 +1,5 @@
 import React from "react";
-import { LayoutShell } from "./components/LayoutShell";
+import { LayoutShell } from "../components/LayoutShell";
 
 const page = () => {
   return (
