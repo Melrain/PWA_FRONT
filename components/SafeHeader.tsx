@@ -8,7 +8,9 @@ export function SafeHeader() {
   const { user } = useTelegramUserStore();
   return (
     <header className={`${isTelegram ? "pt-28" : "pt-6"} `}>
-      {isTelegram ? `这是telegram环境:${user?.id}` : "非telegram 环境"}
+      {isTelegram
+        ? `这是telegram环境:${user?.id} ${user?.firstName}`
+        : "非telegram 环境"}
     </header>
   );
 }
