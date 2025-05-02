@@ -39,15 +39,17 @@ export function useInitTelegram() {
 
     if (telegramUser) {
       setUser({
-        id: telegramUser.id as number,
-        firstName: telegramUser.first_name as string,
-        lastName: telegramUser.last_name as string,
-        username: telegramUser.username as string,
-        avatar: telegramUser.photo_url as string,
-        languageCode: telegramUser.language_code as string,
-        isBot: telegramUser.is_bot as boolean,
+        id: telegramUser.user?.id as number,
+        firstName: telegramUser.user?.first_name as string,
+        lastName: telegramUser.user?.last_name as string,
+        username: telegramUser.user?.username as string,
+        avatar: telegramUser.user?.photo_url as string,
+        languageCode: telegramUser.user?.language_code as string,
+        isBot: telegramUser.user?.is_bot as boolean,
       });
     }
+
+    console.log(telegramUser);
 
     const runInit = async () => {
       // ✅ 初始化 SDK
