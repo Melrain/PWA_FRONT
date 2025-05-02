@@ -11,7 +11,9 @@ import {
   viewport,
   retrieveLaunchParams,
 } from "@telegram-apps/sdk-react";
+
 import { useAppEnv } from "../store/useAppEnv";
+import { useTelegramUserStore } from "../store/useTelegramUserStore";
 
 export function useInitTelegram() {
   const { setIsTelegram } = useAppEnv();
@@ -31,7 +33,19 @@ export function useInitTelegram() {
       return;
     }
 
-    setIsTelegram(true);
+    const telegramUser = params?.tgWebAppData;
+
+    if (telegramUser) {
+      useTelegramUserStore.getState().setUser({
+        id: telegramUser.id as number,
+        firstName: telegramUser.first_name as string,
+        lastName: telegramUser.last_name as string,
+        username: telegramUser.username as string,
+        avatar: telegramUser.photo_url as string,
+        languageCode: telegramUser.language_code as string,
+        isBot: telegramUser.is_bot as boolean,
+      });
+    }
 
     const runInit = async () => {
       // ✅ 初始化 SDK
