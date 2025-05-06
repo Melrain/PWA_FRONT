@@ -78,12 +78,12 @@ export function useInitTelegram() {
       // ✅ 视口挂载 + 请求全屏
       if (viewport.mount.isAvailable() && !viewport.isMounting()) {
         await viewport.mount();
-        // viewport.requestFullscreen?.ifAvailable?.(); // 更安全的写法
-        // viewport.expand?.();
-        // setFullScreen(true);
+        viewport.requestFullscreen?.ifAvailable?.(); // 更安全的写法
+        viewport.expand?.();
+        setFullScreen(true);
       }
     };
 
     runInit();
-  }, []);
+  }, [setFullScreen, setIsTelegram, setUser]);
 }

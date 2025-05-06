@@ -8,8 +8,8 @@ export function SafeHeader() {
   const { isFullScreen } = useTelegramUserStore();
   return (
     <header
-      className={`${
-        isTelegram && isFullScreen ? "pt-28" : "pt-6"
-      } text-white`}></header>
+      className={`${isTelegram && isFullScreen ? "pt-28" : "pt-6"} text-white`}>
+      Header
+    </header>
   );
 }
