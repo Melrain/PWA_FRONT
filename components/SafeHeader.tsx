@@ -5,12 +5,11 @@ import { useTelegramUserStore } from "../store/useTelegramUserStore";
 
 export function SafeHeader() {
   const { isTelegram } = useAppEnv();
-  const { user } = useTelegramUserStore();
+  const { isFullScreen } = useTelegramUserStore();
   return (
-    <header className={`${isTelegram ? "pt-28" : "pt-6"} `}>
-      {isTelegram
-        ? `这是telegram环境:${user?.id} ${user?.firstName}`
-        : "非telegram 环境"}
-    </header>
+    <header
+      className={`${
+        isTelegram && isFullScreen ? "pt-28" : "pt-6"
+      } text-white`}></header>
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // app/hooks/useInitTelegram.ts
 "use client";
 
@@ -17,7 +18,7 @@ import { useTelegramUserStore } from "../store/useTelegramUserStore";
 
 export function useInitTelegram() {
   const { setIsTelegram } = useAppEnv();
-  const { setUser } = useTelegramUserStore();
+  const { setUser, setFullScreen } = useTelegramUserStore();
   useEffect(() => {
     let params;
     try {
@@ -77,8 +78,9 @@ export function useInitTelegram() {
       // ✅ 视口挂载 + 请求全屏
       if (viewport.mount.isAvailable() && !viewport.isMounting()) {
         await viewport.mount();
-        viewport.requestFullscreen?.ifAvailable?.(); // 更安全的写法
-        viewport.expand?.();
+        // viewport.requestFullscreen?.ifAvailable?.(); // 更安全的写法
+        // viewport.expand?.();
+        // setFullScreen(true);
       }
     };
 
