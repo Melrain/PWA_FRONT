@@ -1,10 +1,17 @@
 import { LayoutShell } from "@/components/LayoutShell";
+import MyProfile from "@/components/profile/MyProfile";
+
 import React from "react";
 
 const page = () => {
   return (
     <LayoutShell>
-      <div className="text-white">1</div>
+      <div className="flex  w-full md:p-10">
+        {/* Header Profile */}
+        <div>
+          <MyProfile />
+        </div>
+      </div>
     </LayoutShell>
   );
 };
