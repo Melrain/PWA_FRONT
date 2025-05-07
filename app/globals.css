@@ -11,6 +11,12 @@
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
     background-color: var(--background);
     color: var(--foreground);
+    background-image: radial-gradient(
+      circle at 4px 4px,
+      #333 4px,
+      transparent 0
+    );
+    background-size: 140px 140px;
   }
 
   .safe-area-wrapper {

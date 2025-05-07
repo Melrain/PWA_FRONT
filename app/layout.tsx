@@ -1,14 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, ZCOOL_KuaiLe } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const kuaile = ZCOOL_KuaiLe({
+  weight: "400", // ZCOOL KuaiLe 只有一个粗细
   subsets: ["latin"],
+  variable: "--font-kuaile",
 });
 
 export default function RootLayout({
@@ -46,7 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}>
+        className={`${kuaile.variable} antialiased bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] overflow-auto`}>
         {children}
       </body>
     </html>

@@ -6,9 +6,9 @@ import React from "react";
 const page = () => {
   return (
     <LayoutShell>
-      <div className="flex  w-full md:p-10">
+      <div className="flex  w-full md:p-10 ">
         {/* Header Profile */}
-        <div>
+        <div className="flex w-full">
           <MyProfile />
         </div>
       </div>
